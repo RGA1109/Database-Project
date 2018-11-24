@@ -1,0 +1,59 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h2>Medications</h2>
+{% endblock header %}
+
+{% block content %}
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Medication</th>
+                        <th>Dose</th>
+                        <th>Pill Count</th>
+                        <th>Prescriber</th>
+                        <th>Pharmacy</th>
+                        <th>Price</th>
+                        <th>Expiration Date</th>
+                        <th>Prescription Status</th>
+                        <th>Refill Prescriptions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for topic in topics %}
+                    <tr>
+                        <td>{{ topic.name }}</td>
+                        <td>{{ topic.dose }} {{ topic.dose_units }}</td>
+                        <td>{{ topic.pill_count }}</td>
+                        <td>{{ topic.prescriber }}</td>
+                        <td>{{ topic.pharmacy }}</td>
+                        <td>${{ topic.price|floatformat:2 }}</td>
+                        <td>{{ topic.expiration_date }}</td>
+                        <td><strong><span class="text-{{ topic.expiration_status }}">{{ topic.expiration_text }}</span></strong></td>
+                        <td>
+                            <a href="{% url 'learning_logs:refill' 64108 topic.id %}">
+                                <button type="button" class="btn btn-primary btn-sm">
+                                    Compare Prices
+                                </button>
+                            </a>
+                        </td>
+
+                    </tr>
+                {% empty %}
+                    <p>No medications have been added yet.</p>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <a href="{% url 'learning_logs:new_medication' %}">
+        <button type="button" class="btn btn-primary btn-lg">
+            Add a New Medication
+        </button>
+    </a>
+
+{% endblock content %}

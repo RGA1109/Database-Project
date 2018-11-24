@@ -1,0 +1,9 @@
+.mainbody {
+    background-color: orange;
+}
+.container_home_page {
+    background: url("../../../static/learning_logs/Frontground.png") !important;
+    width: 1366px;
+    height: 768px;
+
+}
