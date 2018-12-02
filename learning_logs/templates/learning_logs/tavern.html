@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Happyville Map</title>
+	<link rel="stylesheet" type="text/css" href="/static/learning_logs/style.css">
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/pixelated" type="text/css"/> 
+</head>
+<body>
+
+	<header id="main-header" style="background-color: #666; margin-bottom: 10px; padding: 2px;">
+		<div class="header-image" style="display: block; width: 100%; margin: 5px;">
+			<img src="/static/learning_logs/hv_logo.png">
+			<a class="plain-button"  style="text-align: center; background-color: black;
+              margin-top: 20px; border-radius: 50px; padding: 22px; width: 350px; text-decoration: none;
+              color: #fff; font-family: SFPixelateRegular, tahoma, helvetica, serif; float: right; margin-right: 35px; font-size: small; line-height: 40px" href="{% url 'learning_logs:map' %}">Main Control Screen</a>
+		</div>
+	</header>
+	
+	<div class="plain-box" style="background-color: #666; border-style: none !important; padding: 0 !important;">
+		<div class="location-header" style="display: none; margin: 15px; padding: 1%; box-sizing: border-box;">
+			<h1>Location: Tavern</h1>
+		</div>
+
+		<div class="clr"></div>
+
+		<div class="item-details" style="display: block; border-color: #333; border-width: 2px; border-style: inset; margin: auto; font-size: 50px; line-height: 1.6em;">
+				<!-- Screen Image -->
+		<img class="img" src="/static/learning_logs/town.jpg" alt="Sorry about that" draggable="false">
+
+		<!-- Top Buttons -->
+		<div class="button-group-tavern">
+			<a class="button" href="{% url 'learning_logs:map' %}">Map</a>
+			<a class="button" href="{% url 'learning_logs:tavern' %}">Reports</a>
+			<a class="button" href="{% url 'learning_logs:citizen-roster' %}">Citizen Roster</a>
+		</div>
+
+      <!-- Side Bar -->
+
+      <div style="width: 30%; border-left: 2px solid white; border-right: 2px solid white; padding: 90px 30px; background-color: #ffffff26;">
+        <ul style="list-style-type: none; text-align: center;">
+          <li>Location ID: </li>
+          <li>Number of Citizens in Area: </li>
+        </ul>
+        <hr>
+        <ul style="list-style-type: none; text-align: center;">
+          <li>Map Address:</li>
+          <li>Area Owner: </li>
+          <li>Threat Level: </li>
+          <li>Curfew Time: </li>
+          <li>Security ID: </li>
+        </ul>
+      </div>
+		</div>
+	</div>
+	
+	<footer id="main-footer" style="background-color: #666;
+	border-color: #333;
+	border-style: inset;
+	border-width: 3px;
+	margin: auto;
+	margin-top: 10px;
+	padding: 5px;">
+		<p>Happyville Inc.</p>
+	</footer>
+
+</body>
+</html>

@@ -2,16 +2,15 @@
 {% load static %}
 
 {% block header %}
+
   <body class="container">
     <div class="container colMS">
       <h1 style="font-size: 280px; color: white; margin-top: 180px; text-align: center">HAPPY VILLIAGE</h1>
       <h1 class="centered text" style="font-size: 120px; margin-top: 50px; text-align: center"><a href="{% url 'learning_logs:map' %}">Map</a></h1><br>
       <h1 class="centered" style="font-size: 120px; text-align: center"><a href="{% url 'learning_logs:reports' %}">Reports</a></h1><br>
-      <h1 class="centered" style="font-size: 120px; text-align: center"><a href="{% url 'learning_logs:citizen_roster' %}">Citizen_Roster</a></h1><br>
+      <h1 class="centered" style="font-size: 120px; text-align: center"><a href="{% url 'learning_logs:citizen-roster' %}">Citizen_Roster</a></h1><br>
     </div>
   </body>
-
-
 
 {% endblock header %}
 

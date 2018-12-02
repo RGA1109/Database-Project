@@ -1,1 +1,57 @@
-<h1>Reports go here</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Happyville Map</title>
+	<link rel="stylesheet" type="text/css" href="/static/learning_logs/style.css">
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/pixelated" type="text/css"/> 
+</head>
+<body>
+
+	<header id="main-header">
+		<div class="header-image">
+			<img src="/static/learning_logs/hv_logo.png">
+			<a class="plain-button" href="{% url 'learning_logs:index' %}">Main Control Screen</a>
+		</div>
+	</header>
+
+	<div class="plain-box">
+		<h1>Test</h1>
+		<button class="plain-button">111</button>
+		<button class="plain-button">222</button>
+		<button class="plain-button">333</button>
+	</div>
+
+	<div class="plain-area">
+		<p>Select from these Fast Reports: </p>
+		<select class="plain-button">
+			<option value="Watchlist">Citizens who are on the Watchlist</option>
+			<option value="susp-areas">Suspicous areas</option>
+			<option value="most-citizens">Location with the most citizens</option>
+			<option value="tot-income">Total income of Happyville</option>
+		</select> 
+
+		<p>Search for a citizen by name: </p>
+		<form class="input-form">
+			<div class="form-group">
+					<label>Citizen Name: </label>
+					<input type="text" name="name">
+			</div>
+			<input class="button" type=submit value="Search" name"">
+		</form>
+		
+		<p>Search area by name: </p>
+		<form class="input-form">
+			<div class="form-group">
+					<label>Area Name: </label>
+					<input type="text" name="name">
+			</div>
+			<input class="button" type=submit value="Search" name"">
+		</form>
+	</div>
+
+	<footer id="main-footer">
+		<p>Happyville LTD</p>
+	</footer>
+
+</body>
+</html>

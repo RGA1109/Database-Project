@@ -25,7 +25,7 @@ SECRET_KEY = 'k8mpo*wz_sms%5evio7bcm(-y2yri$l)isfv2i*skeg9b5iczv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '136.33.156.163']
 
 
 # Application definition
@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My apps
+    # 'example',
     'learning_logs',
-    'users',
+    # 'users',
 
     # Third party apps
     'bootstrap3',
@@ -81,10 +82,25 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
+    # Live database
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'happyville',
+        'USER': 'greg',
+        'PASSWORD': 'oracle',
+        'HOST': '136.33.156.163',
+        'PORT': '3306',
+    },
+
+    # Testing database
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'happyville',
+    #     'USER': 'root',
+    #     'PASSWORD': 'password',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    # },
 }
 
 

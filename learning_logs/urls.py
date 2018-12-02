@@ -9,25 +9,26 @@ urlpatterns = [
     # Home page
     url(r'^$', views.index, name='index'),
 
-    # # Show all medications
-    # url(r'^medications/$', views.topics, name='medications'),
+    # Redirects of all locations
+    url(r'^barn/$', views.tavern, name='barn'),
+    url(r'^church/$', views.tavern, name='church'),
+    url(r'^market/$', views.tavern, name='market'),
+    url(r'^park/$', views.tavern, name='park'),
+    url(r'^residential/$', views.tavern, name='residential'),
+    url(r'^tavern/$', views.tavern, name='tavern'),
 
-    # # Show information for a single medication
-    # url(r'^medications/(?P<topic_id>\d+)/$', views.topic, name='medication'),
+    # Leads to listings of citizens personal details
+    url(r'^citizen_details/$', views.citizen_details, name='citizen-details'),
 
-    # # Show information to refill a medication
-    # url(r'^medications/refills/(?P<zip_code>\d+)/(?P<medication_id>\d+)/$', views.refill, name='refill'),
+    # Page with a master list of all citizens
+    url(r'^citizen_roster/$', views.citizen_roster, name='citizen-roster'),
 
-    # # Page for adding new medications
-    # url(r'^new_medication/$', views.new_topic, name='new_medication'),
+    # Confirm on termination
+    url(r'^confirm/$', views.confirm, name='confirm'),
 
-    # Page with team member information
+    # Overview maps page
     url(r'^map/$', views.map, name='map'),
 
+    # Page with reports on citizens
     url(r'^reports/$', views.reports, name='reports'),
-
-    url(r'^citizen_roster/$', views.citizen_roster, name='citizen_roster'),
-
-    url(r'^camera/$', views.camera, name='camera'),
-
 ]

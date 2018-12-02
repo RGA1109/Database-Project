@@ -2,53 +2,65 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
 
-        <title>Silver</title>
+<head>
+	<title>Happyville Control Center</title>
+	<link rel="stylesheet" type="text/css" href="/static/learning_logs/style.css">
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/pixelated" type="text/css">
+</head>
 
-        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-        {% bootstrap_css %}
-        {% bootstrap_javascript %}
-        <link rel="stylesheet" type="text/css" href="{% static "learning_logs/footer.css" %}">
-        <link rel="icon" type="image/png" href="{% static "learning_logs/favicon.ico" %}" />
-    </head>
+<body>
+	<header id="main-header">
+		<div class="header-image">
+			<img src="/static/learning_logs/hv_logo.png">
+			<h1>Happyville Control Center</h1>
+		</div>
+	</header>
 
-    <body style="background-color: orange; width: 95%; margin:110px" class="container" >
-      <div class="container" style="width:80%; height:60%;">
-        <div class="container-sp-town" style="height:2300px; width:100%">
-            <!-- Static Navbar -->
-        <nav class="navbar navbar-default bg-inverse navbar-static-top ">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed"
-                        data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    </button>
-                </div>
+	<!-- Container -->
+	<div class="container">
 
-                <div id="navbar" class="navbar-collapse collapse">
+		<!-- Screen Image -->
+		<img class="img" src="/static/learning_logs/town.jpg" alt="Sorry about that" draggable="false">
 
-                <div class="text-primary"></div>
-                    <ul class="nav navbar-nav navbar-left">
-                        {% if user.is_authenticated %}
-                            <h1><a class="words">Welcome Back, {{ user.username }}</a></h1>
-                            <h1><a href="{% url 'learning_logs:medications' %}"><header>Medications</header></a></h1>
-                            <h1><a href="{% url 'learning_logs:camera' %}">camera</a></h1>
-                            <h1><a href="{% url 'users:logout' %}">Logout</a></h1>
-                        {% else %}
-                            <h1><a href="{% url 'users:register' %}">Register</a></h1>
-                            <h1><a href="{% url 'learning_logs:camera' %}">Camera</a></h1>
-                            <h1><a href="{% url 'users:login' %}">Login</a></h1>
-                        {% endif %}
-                    </ul>
-                </div> <!--/.nav-collapse-->
-            </div>
-        </nav>
-        </div>
-      </div>
-    </body>
+		<!-- Top Buttons -->
+		<div class="button-group-1">
+			<a class="button" href="{% url 'learning_logs:map' %}">Map</a>
+			<a class="button" href="{% url 'learning_logs:reports' %}">Reports</a>
+			<a class="button" href="{% url 'learning_logs:citizen-roster' %}">Citizen Roster</a>
+		</div>
+
+		<div class="clr"></div>
+
+		<!-- Side Buttons -->
+		<div class="button-group-2">
+			<a class="button" href="{% url 'learning_logs:tavern' %}">Church</a>
+			<a class="button" href="{% url 'learning_logs:tavern' %}">Tavern</a>
+			<a class="button" href="{% url 'learning_logs:tavern' %}">Barn</a>
+			<a class="button" href="{% url 'learning_logs:tavern' %}">Park</a>
+			<a class="button" href="{% url 'learning_logs:tavern' %}">Market</a>
+			<a class="button" href="{% url 'learning_logs:tavern' %}">Residential</a>
+		</div>
+	</div>
+
+	<div class="plain-box">
+		<h1>Status and details</h1>
+			<div class="plain-area">
+				<div class="item-details">
+					<ul>
+						<li>Stuff</li>
+						<li>Stuff</li>
+						<li>Stuff</li>
+						<li>Stuff</li>
+					</ul>
+				</div>
+			</div>
+	</div>
+</body>
+<footer id="main-footer">
+	<p>Happyville Inc.</p>
+</footer>
+
+</html>
