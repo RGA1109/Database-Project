@@ -22,7 +22,7 @@ def register(request):
             new_user = form.save()
             # Log the user in and then redirect to home page.
             login(request, new_user, backend='django.contrib.auth.backends.ModelBackend')
-            return HttpResponseRedirect(reverse('learning_logs:medications'))
+            return HttpResponseRedirect(reverse('learning_logs:index'))
 
     context = {'form': form}
-    return render(request, 'users/register.html', context)
+    return render(request, 'learning_logs/index.html', context)

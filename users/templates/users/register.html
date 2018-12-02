@@ -9,16 +9,16 @@
 
 
 
-  {# Don't delete will need to summit new data to database #}
-{#    <form method="post" action="{% url 'users:register' %}" class="form">#}
-{#        {% csrf_token %}#}
-{#        {% bootstrap_form form %}#}
-{##}
-{#        {% buttons %}#}
-{#            <button name="submit" class="btn btn-primary">Register</button>#}
-{#        {% endbuttons %}#}
-{##}
-{#        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />#}
-{#    </form>#}
+   Don't delete will need to summit new data to database
+    <form method="post" action="{% url 'users:register' %}" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">Register</button>
+        {% endbuttons %}
+
+        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+    </form>
 
 {% endblock content %}
